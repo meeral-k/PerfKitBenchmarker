@@ -388,7 +388,7 @@ def _GetYcsbExecutor(
       'jvm-args': jvm_args,
       'table': _GetTableName()}
 
-  return ycsb.YCSBExecutor('googlebigtable', **executor_flags)
+  return ycsb.YCSBExecutor(FLAGS.hbase_binding, **executor_flags)
 
 
 def Run(benchmark_spec: bm_spec.BenchmarkSpec) -> List[sample.Sample]:
